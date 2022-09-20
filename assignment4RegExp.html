@@ -8,7 +8,7 @@
 				var nameInput = document.getElementById("name").value;
 				var errorName = document.getElementById("nameError");
 				if(!nameCheck.test(nameInput)){
-					errorName.innerHTML = "Error. Input incorrect.";
+					errorName.innerHTML = "First and Last name seperated by a space.";
 				}
 				else{
 					errorName.innerHTML = "";
@@ -19,7 +19,7 @@
 				var passInput = document.getElementById("password").value;
 				var errorPass = document.getElementById("passError");
 				if(!passCheck.test(passInput)){
-					errorPass.innerHTML = "Error. Input incorrect.";
+					errorPass.innerHTML = "Must be at least 7 characters (letters, and/or digits) with underscore allowed.";
 				}
 				else{
 					errorPass.innerHTML = "";
@@ -30,7 +30,7 @@
 				var addInput = document.getElementById("address").value;
 				var errorAdd = document.getElementById("addError");
 				if(!addCheck.test(addInput)){
-					errorAdd.innerHTML = "Error. Input incorrect.";
+					errorAdd.innerHTML = "1-5 numbers followed by street name (up to 15 characters.";
 				}
 				else{
 					errorAdd.innerHTML = "";
@@ -42,7 +42,7 @@
 				var zipInput = document.getElementById("zip").value;
 				var errorZip = document.getElementById("zipError");
 				if(!zipCheck.test(zipInput)){
-					errorZip.innerHTML = "Error. Input incorrect.";
+					errorZip.innerHTML = "5 digits.";
 				}
 				else{
 					errorZip.innerHTML = "";
@@ -53,7 +53,7 @@
 				var dobInput = document.getElementById("dob").value;
 				var errorDob = document.getElementById("dobError");
 				if(!dobCheck.test(dobInput)){
-					errorDob.innerHTML = "Error. Input incorrect.";
+					errorDob.innerHTML = "format mm-dd-yyyy";
 				}
 				else{
 					errorDob.innerHTML = "";
@@ -65,7 +65,7 @@
 				var ccInput = document.getElementById("credit").value;
 				var errorCC = document.getElementById("ccError");
 				if(!ccCheck.test(ccInput)){
-					errorCC.innerHTML = "Error. Input incorrect.";
+					errorCC.innerHTML = "This format xxxx-xxxx-xxxx-xxxx";
 				}
 				else{
 					errorCC.innerHTML = "";
