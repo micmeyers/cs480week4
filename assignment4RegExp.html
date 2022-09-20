@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script>
+            	function checkName(){
+				var nameCheck = /[a-zA-z\-]+\s[a-zA-Z\-]+/;
+				var nameInput = document.getElementById("name").value;
+				var errorName = document.getElementById("nameError");
+				if(!nameCheck.test(nameInput)){
+					errorName.innerHTML = "Error. Input incorrect.";
+				}
+				else{
+					errorName.innerHTML = "";
+				}
+			}
+            function checkPass(){
+				var passCheck = /^[w\d]{7,}$/;
+				var passInput = document.getElementById("password").value;
+				var errorPass = document.getElementById("passError");
+				if(!passCheck.test(passInput)){
+					errorPass.innerHTML = "Error. Input incorrect.";
+				}
+				else{
+					errorPass.innerHTML = "";
+				}
+			}
+            function checkAddress(){
+				var addCheck = /^[1-5]{1}[\w]{1,15}$/;
+				var addInput = document.getElementById("address").value;
+				var errorAdd = document.getElementById("addError");
+				if(!addCheck.test(addInput)){
+					errorAdd.innerHTML = "Error. Input incorrect.";
+				}
+				else{
+					errorAdd.innerHTML = "";
+				}
+			}
+                
+            function checkZip(){
+				var zipCheck = /^[\d]{5}$/;
+				var zipInput = document.getElementById("zip").value;
+				var errorZip = document.getElementById("zipError");
+				if(!zipCheck.test(zipInput)){
+					errorZip.innerHTML = "Error. Input incorrect.";
+				}
+				else{
+					errorZip.innerHTML = "";
+				}
+			}
+            function checkDob(){
+				var dobCheck = /^[0-1][0-9]-[0-3][0-9]-[0-9]{4}$/;
+				var dobInput = document.getElementById("dob").value;
+				var errorDob = document.getElementById("dobError");
+				if(!dobCheck.test(dobInput)){
+					errorDob.innerHTML = "Error. Input incorrect.";
+				}
+				else{
+					errorDob.innerHTML = "";
+				}
+			}
+        
+            function checkCC(){
+				var ccCheck = /^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}$/;
+				var ccInput = document.getElementById("credit").value;
+				var errorCC = document.getElementById("ccError");
+				if(!ccCheck.test(ccInput)){
+					errorCC.innerHTML = "Error. Input incorrect.";
+				}
+				else{
+					errorCC.innerHTML = "";
+				}
+			}
+        </script>
+    </head>
+    <body>
+        <form>            
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" placeholder="Jane Doe" pattern="\w\s\w*" required title="First and Last name seperated by a space" onkeydown="checkName()"><span class='error' id='nameError'></span>
+            <br>            
+            <label for="password">Password:</label>
+            <input type="text" id="password" placeholder="Must be 7 characters" pattern="[\w\d]{7,}" title="Must be at least 7 characters (letters, and/or digits) with underscore allowed" onkeydown="checkPass()"><span class='error' id='passError'></span>
+            <br>            
+            <label for="address">Address:</label>
+            <input type="text" id="address" placeholder="1234 Street" pattern="[1-5][\w]{1,15}" title="1-5 numbers followed by street name (up to 15 characters" onkeydown="checkAddress()"><span class='error' id='addError'></span>
+            <br>            
+            <label for="zip">Zip code:</label>
+            <input type="text" id="zip" placeholder="12345" pattern="\d{5}" title="5 digits" onkeydown="checkZip()"><span class='error' id='zipError'></span>
+            <br>            
+            <label for="dob">Date of Birth:</label>
+            <input type="text" id="dob" placeholder="mm-dd-yyyy" pattern="[0-1][0-9]-[0-3][0-9]-[0-9]{4}" title="format mm-dd-yyyy" onkeydown="checkDob()"><span class='error' id='dobError'></span>
+            <br>            
+            <label for="credit">Credit card number:</label>
+            <input type="text" id="credit" placeholder="xxxx-xxxx-xxxx-xxxx" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{4}" title="This format xxxx-xxxx-xxxx-xxxx" onkeydown="checkCC()"><span class='error' id='ccError'></span>
+            <br>
+            <input type="submit" value="submit">
+        </form>
+    </body>
+</html>
